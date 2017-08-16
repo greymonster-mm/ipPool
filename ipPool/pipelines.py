@@ -35,7 +35,7 @@ class ipPoolPipeline(object):
 
         enabled = self.detect(item)
 
-        exist = self.collection.find_one(item)
+        exist = self.collection.find_one(dict(item))
         if exist is not None:
             if enabled:
                 #drop items in db
